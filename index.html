@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XehTern Solutions | Цифровая Крепость</title>
+    <meta name="description" content="Разработка защищенных приложений и аудит безопасности. Игорь Евсеенко (XehTern) - создаю код, который переживет апокалипсис.">
+    
+    <!-- Фавиконка -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔒</text></svg>">
+    
+    <!-- Стили -->
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Анимированный матричный фон -->
+    <div class="matrix-bg" id="matrix"></div>
+
+    <!-- Главный контейнер -->
+    <div class="container">
+        <!-- Навигация -->
+        <nav class="navbar">
+            <div class="nav-brand glitch" data-text="XehTern">XehTern</div>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link active">Главная</a></li>
+                <li><a href="#services" class="nav-link">Услуги</a></li>
+                <li><a href="#about" class="nav-link">Обо мне</a></li>
+                <li><a href="#contact" class="nav-link">Контакты</a></li>
+            </ul>
+        </nav>
+
+        <!-- Секция Главная -->
+        <section id="home" class="section active">
+            <div class="hero">
+                <!-- Улучшенный матричный заголовок с анимацией падения -->
+                <div class="matrix-title-container">
+                    <div class="matrix-title" id="matrixTitle">
+                        <!-- Буквы будут добавлены через JavaScript -->
+                    </div>
+                </div>
+                
+                <p class="tagline">Про машину времени слыхали? Я ее не создал. Зато я могу написать код, который исправит ваше прошлое... <span class="highlight">в логах.</span></p>
+                <button class="cta-button" onclick="scrollToSection('services')">
+                    <span class="btn-text">Что я могу?</span>
+                </button>
+            </div>
+            
+            <!-- Компьютер с матрицей -->
+            <div class="computer-container">
+                <div class="computer">
+                    <div class="monitor">
+                        <div class="screen">
+                            <div class="matrix-screen" id="matrixScreen"></div>
+                        </div>
+                    </div>
+                    <div class="keyboard"></div>
+                </div>
+            </div>
+
+            <!-- Хакерский терминал -->
+            <div class="hacker-terminal">
+                <div class="terminal-output" id="terminalOutput">
+                    <div>> Initializing security protocols...</div>
+                    <div>> Loading threat database...</div>
+                    <div>> Establishing secure connection...</div>
+                    <div>> System status: <span class="status-green">SECURE</span></div>
+                    <div>> Welcome to XehTern Security Terminal</div>
+                </div>
+                <div class="terminal-input">
+                    <span class="prompt">></span>
+                    <input type="text" id="terminalInput" placeholder="type 'help' for commands">
+                </div>
+            </div>
+        </section>
+
+        <!-- Секция Услуги -->
+        <section id="services" class="section">
+            <h2 class="section-title">Мои Услуги</h2>
+            <div class="services-grid">
+                <!-- 3D карточка Аудит -->
+                <div class="service-card-3d" onclick="openModal('audit')">
+                    <div class="card-3d-inner">
+                        <div class="card-3d-front">
+                            <div class="card-icon">🔒</div>
+                            <h3>Аудит Безопасности</h3>
+                            <p>Ищу дыры в вашей защите. Не те, что на джинсах, а те, через которые утекают данные.</p>
+                            <div class="card-hint">Наведи для подробностей</div>
+                        </div>
+                        <div class="card-3d-back">
+                            <h3>🔒 Аудит</h3>
+                            <ul>
+                                <li>Сканирование уязвимостей</li>
+                                <li>Тестирование на проникновение</li>
+                                <li>Анализ кода</li>
+                                <li>Отчет с рекомендациями</li>
+                            </ul>
+                            <div class="card-action">Нажми для заказа</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3D карточка Разработка -->
+                <div class="service-card-3d" onclick="openModal('development')">
+                    <div class="card-3d-inner">
+                        <div class="card-3d-front">
+                            <div class="card-icon">💻</div>
+                            <h3>Разработка Защищенных Приложений</h3>
+                            <p>Пишу код, который способен пережить апокалипсис. Проверено в бою. (Ну, почти).</p>
+                            <div class="card-hint">Наведи для подробностей</div>
+                        </div>
+                        <div class="card-3d-back">
+                            <h3>💻 Разработка</h3>
+                            <ul>
+                                <li>Zero Trust архитектура</li>
+                                <li>End-to-end шифрование</li>
+                                <li>Защита от OWASP Top 10</li>
+                                <li>Code review</li>
+                            </ul>
+                            <div class="card-action">Нажми для заказа</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3D карточка Кризис -->
+                <div class="service-card-3d" onclick="openModal('crisis')">
+                    <div class="card-3d-inner">
+                        <div class="card-3d-front">
+                            <div class="card-icon">🚨</div>
+                            <h3>Кризисный Менеджмент</h3>
+                            <p>Вас уже взломали? Не паникуем. Закрываем лазуху, восстанавливаем данные, находим след.</p>
+                            <div class="card-hint">Наведи для подробностей</div>
+                        </div>
+                        <div class="card-3d-back">
+                            <h3>🚨 Кризис</h3>
+                            <ul>
+                                <li>Экстренный ответ</li>
+                                <li>Восстановление систем</li>
+                                <li>Поиск уязвимости</li>
+                                <li>24/7 поддержка</li>
+                            </ul>
+                            <div class="card-action">Нажми для заказа</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Модальные окна для услуг -->
+        <div id="auditModal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>🔒 Аудит Безопасности</h2>
+                <div class="modal-body">
+                    <div class="service-details">
+                        <h3>Что включает аудит:</h3>
+                        <ul>
+                            <li>📡 Сканирование уязвимостей</li>
+                            <li>🔍 Анализ кода на backdoor'ы</li>
+                            <li>🛡️ Тестирование на проникновение</li>
+                            <li>📊 Отчет с рекомендациями</li>
+                            <li>🛠️ Помощь в устранении проблем</li>
+                        </ul>
+                        
+                        <h3>Стоимость:</h3>
+                        <p>От 25 000 ₽ (зависит от сложности проекта)</p>
+                        
+                        <h3>Сроки:</h3>
+                        <p>3-10 рабочих дней</p>
+                    </div>
+                    <button class="cta-button modal-btn" onclick="openContactForm('Аудит безопасности')">
+                        Заказать аудит
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="developmentModal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>💻 Разработка Защищенных Приложений</h2>
+                <div class="modal-body">
+                    <div class="service-details">
+                        <h3>Что предлагаю:</h3>
+                        <ul>
+                            <li>🛡️ Приложения с нулевым доверием (Zero Trust)</li>
+                            <li>🔐 Шифрование данных end-to-end</li>
+                            <li>⚡ Защита от OWASP Top 10</li>
+                            <li>📱 Secure SDLC внедрение</li>
+                            <li>🚀 Code review и оптимизация</li>
+                        </ul>
+                        
+                        <h3>Технологии:</h3>
+                        <p>Python, Node.js, React, PostgreSQL, Docker, AWS/GCP</p>
+                        
+                        <h3>Стоимость:</h3>
+                        <p>Индивидуальный расчет под проект</p>
+                    </div>
+                    <button class="cta-button modal-btn" onclick="openContactForm('Разработка защищенного приложения')">
+                        Обсудить проект
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="crisisModal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>🚨 Кризисный Менеджмент</h2>
+                <div class="modal-body">
+                    <div class="service-details">
+                        <h3>Экстренная помощь при:</h3>
+                        <ul>
+                            <li>🔥 Взломе системы</li>
+                            <li>💸 Утечке данных</li>
+                            <li>🦠 Ransomware-атаке</li>
+                            <li>🚫 DDoS-нападении</li>
+                            <li>🔓 Компрометации аккаунтов</li>
+                        </ul>
+                        
+                        <h3>Мои действия:</h3>
+                        <ul>
+                            <li>✅ Немедленный анализ угрозы</li>
+                            <li>✅ Блокировка атаки</li>
+                            <li>✅ Восстановление систем</li>
+                            <li>✅ Поиск уязвимости</li>
+                            <li>✅ Предотвращение повторения</li>
+                        </ul>
+                        
+                        <h3>Режим работы:</h3>
+                        <p>24/7 - доступен в любое время при критических инцидентах</p>
+                    </div>
+                    <button class="cta-button modal-btn emergency-btn" onclick="openContactForm('КРИЗИС - СРОЧНАЯ ПОМОЩЬ')">
+                        🚨 СРОЧНЫЙ ВЫЗОВ
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Секция Обо мне -->
+        <section id="about" class="section">
+            <h2 class="section-title">Кто в танке?</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Меня зовут <span class="highlight">Игорь Евсеенко</span>, но в цифровом мире я известен как <span class="highlight">XehTern</span>.</p>
+                    <p>Я не ношу черную толстовку с капюшоном и не сижу в подвале. Я — инженер. Моя философия проста: лучшая атака — это надежная защита. Я создаю программные щиты и мечи, которые позволяют моим клиентам спать спокойно.</p>
+                    <p><strong>Мой принцип:</strong> "Любую проблему можно решить правильным кодом. Даже если эта проблема — человеческая ошибка."</p>
+                </div>
+                <div class="skills">
+                    <h3>Мой стек технологий:</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <div class="skill-icon">🐍</div>
+                            <span class="skill-tag">Python</span>
+                            <div class="skill-level">
+                                <div class="skill-progress" data-level="90"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon">⚡</div>
+                            <span class="skill-tag">JavaScript</span>
+                            <div class="skill-level">
+                                <div class="skill-progress" data-level="85"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon">🟢</div>
+                            <span class="skill-tag">Node.js</span>
+                            <div class="skill-level">
+                                <div class="skill-progress" data-level="80"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon">⚛️</div>
+                            <span class="skill-tag">React</span>
+                            <div class="skill-level">
+                                <div class="skill-progress" data-level="75"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon">🛡️</div>
+                            <span class="skill-tag">Cyber Security</span>
+                            <div class="skill-level">
+                                <div class="skill-progress" data-level="95"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon">🔓</div>
+                            <span class="skill-tag">Pentesting</span>
+                            <div class="skill-level">
+                                <div class="skill-progress" data-level="88"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Секция Контакты -->
+        <section id="contact" class="section">
+            <h2 class="section-title">Вызывайте апокалипсис</h2>
+            <p class="contact-subtitle">...а я его устраню. Свяжитесь со мной, и мы обсудим, как обезопасить ваш цифровой мир.</p>
+            
+            <form class="contact-form">
+                <div class="input-group">
+                    <input type="text" placeholder="Ваше имя" required>
+                    <span class="input-focus"></span>
+                </div>
+                <div class="input-group">
+                    <input type="email" placeholder="Ваш e-mail" required>
+                    <span class="input-focus"></span>
+                </div>
+                <div class="input-group">
+                    <textarea placeholder="Ваше сообщение (можно в формате 'SOS')" rows="5" required></textarea>
+                    <span class="input-focus"></span>
+                </div>
+                <button type="submit" class="submit-btn">
+                    <span class="btn-text">Отправить шифровку</span>
+                </button>
+            </form>
+            
+            <div class="social-links">
+                <h3>Или найдете меня тут:</h3>
+                <div class="social-grid">
+                    <a href="https://github.com/InkPeople13" class="social-link github" target="_blank">
+                        <span>GitHub</span>
+                    </a>
+                    <a href="mailto:kudo20006000@gmail.com" class="social-link email">
+                        <span>Email</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Улучшенный AI ассистент -->
+    <div id="aiAssistant" class="ai-assistant">
+        <div class="ai-avatar">
+            <div class="ai-eye left-eye"></div>
+            <div class="ai-eye right-eye"></div>
+            <div class="ai-mouth"></div>
+        </div>
+        <div class="ai-chat">
+            <div class="ai-message">Привет! Я твой AI-помощник. Скажи "Помощь" или нажми на меня</div>
+        </div>
+        <button class="ai-voice-btn">🎤</button>
+        <button class="ai-speak-btn">🔊</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
